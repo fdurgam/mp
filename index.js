@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   const htmlResponse = `
     <html>
       <head>
-        <title>NodeJs y Express en Vercel</title>
+        <title>NodeJs y Express en Vercel 2</title>
       </head>
       <body>
         <h1>Soy un proyecto Back end en vercel</h1>
