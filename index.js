@@ -60,7 +60,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("./client/html-js"));
 app.get("/", function (req, res) {
-	res.status(200).sendFile("index.html");
+	res.status(200).sendFile("/client/html-js/index.html");
 });  
 app.listen(port, () => {
     console.log('Servidor HTTPS corriendo en el puerto https');
