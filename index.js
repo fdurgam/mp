@@ -1,5 +1,9 @@
 const express = require("express");
 const app = express();
+const mercadopago = require("mercadopago");
+mercadopago.configure({
+	access_token: "TEST-4798754970937613-041720-cd7aa86b4def541abbee5ba18a204d92-133839272",
+});
 
 const port = process.env.PORT || 3000;
 
