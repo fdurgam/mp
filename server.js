@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static("./client/html-js"));
 app.use(cors());
 app.get("/", function (req, res) {
-	res.status(200).sendFile("index.html");
+	res.status(200).sendFile("./client/html-js/index.html");
 });
 
 app.post("/create_preference", (req, res) => {
