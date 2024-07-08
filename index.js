@@ -34,6 +34,14 @@ app.post("/create_preference", (req, res) => {
 			console.log(error);
 		});
 });
+
+app.get('/feedback', function (req, res) {
+	res.json({
+		Payment: req.query.payment_id,
+		Status: req.query.status,
+		MerchantOrder: req.query.merchant_order_id
+	});
+});
 const port=process.env.PORT || 3000
 app.get("/", (req, res) => {
 	const htmlResponse = `
