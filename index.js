@@ -9,10 +9,19 @@ mercadopago.configure({
 
 
 const port=process.env.PORT || 3000
-// Crea un servidor HTTPS con Express
-//https.createServer(options, app).listen(80, () => {
-  //  console.log('Servidor HTTPS corriendo en el puerto https');
-//});
+app.get("/", (req, res) => {
+	const htmlResponse = `
+	  <html>
+		<head>
+		  <title>NodeJs y Express en Vercel</title>
+		</head>
+		<body>
+		  <h1>Soy un proyecto Back end en vercel</h1>
+		</body>
+	  </html>
+	`;
+	res.send(htmlResponse);
+  });
 app.listen(port, () => {
     console.log('Servidor HTTPS corriendo en el puerto https');
 });
