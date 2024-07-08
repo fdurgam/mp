@@ -43,7 +43,7 @@ app.get('/feedback', function (req, res) {
 	});
 });
 const port=process.env.PORT || 3000
-app.get("/", (req, res) => {
+app.get("/inicial", (req, res) => {
 	const htmlResponse = `
 	  <html>
 		<head>
