@@ -43,7 +43,7 @@ app.get('/feedback', function (req, res) {
 	});
 });
 const port=process.env.PORT || 3000
-app.get("/inicial", (req, res) => {
+app.get("/", (req, res) => {
 	const htmlResponse = `
 	  <html>
 		<head>
@@ -57,9 +57,7 @@ app.get("/inicial", (req, res) => {
 	res.send(htmlResponse);
   });
 
-app.get("/", function (req, res) {
-	res.status(200).sendFile("index.html");
-});  
+ 
 app.listen(port, () => {
     console.log('Servidor HTTPS corriendo en el puerto https');
 });
