@@ -14,8 +14,18 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
     description: document.getElementById("product-description").innerHTML,
     price: document.getElementById("unit-price").innerHTML
   };
+  
+  //fetch("http://localhost/create_preference", {
+    var urlCompleta = "http://localhost:8090/create_preference";
 
-  fetch("http://localhost/create_preference", {
+// Obtener el esquema y el host actual
+var esquemaYHostActual = window.location.protocol + '//' + window.location.host;
+
+// Reemplazar el esquema y el host actual en la URL completa para obtener la URL relativa
+
+var urlRelativa = urlCompleta.replace(esquemaYHostActual, '');
+console.info(urlRelativa)
+    fetch("http://localhost:8090/create_preference" , {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -10,11 +10,10 @@ mercadopago.configure({
 });
 
 app.post("/create_preference", (req, res) => {
-
 	let preference = {
 		items: [
 			{
-				title: req.body.description,
+				//title: req.body.description,
 				unit_price: Number(req.body.price),
 				quantity: Number(req.body.quantity),
 			}
@@ -26,7 +25,6 @@ app.post("/create_preference", (req, res) => {
 		},
 		auto_return: "approved",
 	};
-
 	mercadopago.preferences.create(preference)
 		.then(function (response) {
 			res.json({
@@ -35,6 +33,8 @@ app.post("/create_preference", (req, res) => {
 		}).catch(function (error) {
 			console.log(error);
 		});
+
+	console.info("preference")
 });
 
 app.get('/feedback', function (req, res) {
@@ -44,7 +44,8 @@ app.get('/feedback', function (req, res) {
 		MerchantOrder: req.query.merchant_order_id
 	});
 });
-const port=process.env.PORT || 3000
+//const port=process.env.PORT || 3000
+port=8090
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
